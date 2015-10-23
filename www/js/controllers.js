@@ -26,7 +26,6 @@ $scope.test = "heyy";
       $scope.notifications.splice($scope.notifications.indexOf(notification), 1);
   }; 
   
-  
   $scope.doRefresh = function() {
     notificationsService.getAllNotifications()
   .success(function(notifications){
@@ -86,11 +85,16 @@ $scope.test = "heyy";
         $scope.timeoff = timeOffDisplay(dashboard[0]);
         $scope.paycheck = payCheckData(dashboard[1]);
         $scope.benefits = benefitsDisplay(dashboard[2]);
+        $scope.performance = performanceDisplay(dashboard[3]);
     })
     .error(function (e) {
         //Do Something Crazy...freshmen...freshmen...freshmen
     })
 })
+
+.controller('myHealthController', function ($scope, notificationsService) {
+    
+}) 
 
 .controller('benefitsController', function ($scope, notificationsService) {
     notificationsService.getUserBenefits()
@@ -145,5 +149,18 @@ function benefitsDisplay(data) {
     return {
         "title": title,
         "display": display
+    }
+}
+
+
+function performanceDisplay(data) {
+    var title = data.app.charAt(0).toUpperCase() + data.app.slice(1);
+    var midyear = "Midyear Performance Evaluation Status: " + data.appdata.midYearEvaluationStatus;
+    var endyear = "End of year Performance Evaluation Status: " + data.appdata.endYearEvaluationStatus;
+
+    return {
+        "title": title,
+        "midyear": midyear,
+        "endyear": endyear
     }
 }
