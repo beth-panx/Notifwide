@@ -7,11 +7,10 @@
 <ion-view view-title="Current Benefits">
     <ion-content class="padding">
         <div ng-repeat="benefit in benefits">
-            <p>
-                <ul>
-                    <li>Benefit: {{benefit.typeOfBenefit}}</li>
-                    <li>Description: {{benefit.planDescription}}</li>
-                    <li>Coverage/Participation: {{benefit.coverageOrParticipation}}</li>
+                <ul class="list">
+                    <li class="item">Benefit: {{benefit.typeOfBenefit}}</li>
+                    <li class="item">Description: {{benefit.planDescription}}</li>
+                    <li class="item">Coverage/Participation: {{benefit.coverageOrParticipation}}</li>
                 </ul>
             </p>
         </div>
