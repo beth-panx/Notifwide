@@ -21,6 +21,10 @@ $scope.test = "heyy";
     //do something crazy
   })
   
+  $scope.remove = function (notification) {
+      $scope.notifications.splice($scope.notifications.indexOf(notification), 1);
+  }; 
+  
   $scope.doRefresh = function() {
     notificationsService.getAllNotifications()
   .success(function(notifications){
