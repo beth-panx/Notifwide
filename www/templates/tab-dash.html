@@ -1,29 +1,41 @@
 <ion-view view-title="Dashboard">
   <ion-content class="padding">
-    <!--<div class="card">
-      <div class="item item-text-wrap">
-        12 available My Time days.
-      </div>
-    </div>
-    <div class="card">
-      <div class="item item-text-wrap">
-        9 days until next pay day.
-      </div>
-      <div class="item item-divider">
-        Click <a href="#">here</a> to reveal net pay
-      </div>
-    </div>
-    <div class="card">
-      <div class="item item-text-wrap">
-        9 days until next pay day.
-      </div>
-    </div>
-    <div class="card">
-      <div class="item item-text-wrap">
-        9 days until next pay day.
-      </div>
-    </div>-->
+      <ul class="gNow" id="col1">
+          <li>
+              <div class="card">
+                  <p class="card-title">{{timeoff.title}}</p>
+                  <p>{{timeoff.display}}</p>
+                  <p class="url"><a href="http://www.google.com/landing/now/">See the page</a></p>
+              </div>
+          </li>
+          <li>
+              <div class="card">
+                  <p class="card-title">{{paycheck.title}}</p>
+                  <p>{{paycheck.display}}</p>
+                  <p class="url"><a href="http://www.google.com/landing/now/">See the page</a></p>
+              </div>
+          </li>
 
+      </ul>
+      
+  </ion-content>
+</ion-view>
+      <!--
+      <ion-list>
+          <ion-item class="item-remove-animate item-avatar item-icon-right" ng-repeat="notification in notifications"
+                    type="item-text-wrap" href="#/tab/notifications/{{notification._id}}">
+
+              <img ng-src="{{notification.iconUrl}}">
+              <h2>{{notification.title}}</h2>
+              <p>{{notification.bodyText}}</p>
+              <i class="icon ion-chevron-right icon-accessory"></i>
+              <ion-option-button class="button-assertive" ng-click="remove(chat)">
+                  Delete
+              </ion-option-button>
+          </ion-item>
+      </ion-list>
+
+      
     <ul class="gNow" id="col1">
       <li>
         <div class="card">
@@ -59,5 +71,4 @@
         </div>
       </li>
       </ul>
-  </ion-content>
-</ion-view>
+          -->

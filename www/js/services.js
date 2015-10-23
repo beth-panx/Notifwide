@@ -14,6 +14,10 @@ angular.module('starter.services', [])
     notificationsService.getNotificationById = function(ID){
       return $http.get('http://notificationsapi.mybluemix.net/api/notifications/' + ID);
     }
+
+    notificationsService.getUserDashboard = function () {
+        return $http.get('http://notificationsapi.mybluemix.net/api/dashboard');
+    }
     
     // notificationsService.getNotification = function(notificationId, allNotifications){
     //     for (var i = 0; i < allNotifications.length; i++) {
