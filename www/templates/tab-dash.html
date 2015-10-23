@@ -1,73 +1,25 @@
 <ion-view view-title="Dashboard">
-  <ion-content class="padding">
-      <ul class="gNow" id="col1">
-          <li>
-              <div class="card">
-                  <p class="card-title">{{timeoff.display}}</p>
-                  <p class="url"><a href="http://www.google.com/landing/now/"><span class="ion-android-arrow-forward"></span>{{timeoff.title}}</a></p>
-              </div>
-          </li>
-          <li>
-              <div class="card">
-                  <p class="card-title">{{paycheck.display}}</p>
-                  <p></p>
-                  <p class="url"><a href="http://www.google.com/landing/now/"><span class="ion-android-arrow-forward"></span>{{paycheck.title}}</a></p>
-              </div>
-          </li>
+    <ion-content class="padding">
+        <ul class="gNow" id="col1">
+            <li>
+                <div class="card">
+                    <p class="card-title">{{timeoff.display}}</p>
+                    <p class="url"><a href="http://www.google.com/landing/now/"><span class="ion-android-arrow-forward"></span>{{timeoff.title}}</a></p>
+                </div>
+            </li>
+            <li>
+                <div class="card">
+                    <p class="card-title">{{paycheck.display}}</p>
+                    <p class="url"><a href="#/tab/dash/paycheck"><span class="ion-android-arrow-forward"></span>{{paycheck.title}}</a></p>
+                </div>
+            </li>
+            <li>
+                <div class="card">
+                    <p class="card-title">{{benefits.display}}</p>
+                    <p class="url"><a href="#/tab/dash/benefits"><span class="ion-android-arrow-forward"></span>{{benefits.title}}</a></p>
+                </div>
+            </li>
+        </ul>
 
-      </ul>
-      
-  </ion-content>
-</ion-view>
-      <!--
-      <ion-list>
-          <ion-item class="item-remove-animate item-avatar item-icon-right" ng-repeat="notification in notifications"
-                    type="item-text-wrap" href="#/tab/notifications/{{notification._id}}">
-
-              <img ng-src="{{notification.iconUrl}}">
-              <h2>{{notification.title}}</h2>
-              <p>{{notification.bodyText}}</p>
-              <i class="icon ion-chevron-right icon-accessory"></i>
-              <ion-option-button class="button-assertive" ng-click="remove(chat)">
-                  Delete
-              </ion-option-button>
-          </ion-item>
-      </ion-list>
-
-      
-    <ul class="gNow" id="col1">
-      <li>
-        <div class="card">
-          <p class="card-title">Title</p>
-          <p>Font is Open Sans. Title is 28px, whereas the body is 14px.</p>
-          <p>Font color is #444, on a #fff card. The page color is #e1e1e1. I got these from samples I took from Google's "Now"
-            page.</p>
-          <p class="url"><a href="http://www.google.com/landing/now/">See the page</a></p>
-        </div>
-      </li>
-      <li>
-        <div class="card">
-          <p class="card-title">9 days until next pay day</p>
-          <p>Click <a href="#">here</a> to reveal net pay</p>
-        </div>
-      </li>
-      <li>
-        <div class="card">
-          <p class="card-title">12 available My Time days</p>
-          <p>
-            <a href="#"></a>
-          </p>
-        </div>
-      </li>
-    </ul>
-    <ul class="gNow" id="col2">
-      <li>
-        <div class="card">
-          <p class="card-title">Picture</p>
-          <img src="http://www.eriklindemann.com/eMetro/images/full/helpless.jpg" class="full" />
-          <p>When a card has a picture, it should almost always be full bleed width-wise.</p>
-          <p>There are a few exceptions to this which will be covered.</p>
-        </div>
-      </li>
-      </ul>
-          -->
+    </ion-content>
+</ion-view> 

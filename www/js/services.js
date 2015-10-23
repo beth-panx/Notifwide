@@ -18,6 +18,16 @@ angular.module('starter.services', [])
     notificationsService.getUserDashboard = function () {
         return $http.get('http://notificationsapi.mybluemix.net/api/dashboard');
     }
+
+    notificationsService.getUserBenefits = function () {
+        return $http.get('http://notificationsapi.mybluemix.net/api/dashboard/benefits');
+    }
+
+    notificationsService.getUserPayCheck = function () {
+        return $http.get('http://notificationsapi.mybluemix.net/api/dashboard/paycheck');
+    }
+
+    
     
     // notificationsService.getNotification = function(notificationId, allNotifications){
     //     for (var i = 0; i < allNotifications.length; i++) {

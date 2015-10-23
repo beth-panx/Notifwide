@@ -1,4 +1,5 @@
-angular.module('starter.controllers', [])
+
+ angular.module('starter.controllers', [])
 
 .controller('DashCtrl', function($scope) {})
 
@@ -24,6 +25,7 @@ $scope.test = "heyy";
   $scope.remove = function (notification) {
       $scope.notifications.splice($scope.notifications.indexOf(notification), 1);
   }; 
+  
   
   $scope.doRefresh = function() {
     notificationsService.getAllNotifications()
@@ -83,12 +85,28 @@ $scope.test = "heyy";
 
         $scope.timeoff = timeOffDisplay(dashboard[0]);
         $scope.paycheck = payCheckData(dashboard[1]);
-        $scope.benefits = benefitsDisplay(dasb)
+        $scope.benefits = benefitsDisplay(dashboard[2]);
     })
     .error(function (e) {
         //Do Something Crazy...freshmen...freshmen...freshmen
     })
-});
+})
+
+.controller('benefitsController', function ($scope, notificationsService) {
+    notificationsService.getUserBenefits()
+        .success(function (benefits) {
+            $scope.benefits = benefits.appdata.currentEnrollmentOptions;
+        })
+})
+
+.controller('payCheckController', function ($scope, notificationsService) {
+    notificationsService.getUserPayCheck()
+        .success(function (paycheck) {
+            $scope.benefits = paycheck.appdata;
+        })
+})
+
+;
 
 
 function timeOffDisplay(data)
@@ -116,4 +134,16 @@ function payCheckData(data) {
 
     return {"title": title,
         "display": displayText}
+}
+
+function benefitsDisplay(data) {
+    var title = data.app.charAt(0).toUpperCase() + data.app.slice(1);
+    var startDate = new Date(data.appdata.annualEnrollmentStartDate);
+    var endDate = new Date(data.appdata.annualEnrollmentEndDate);
+    var display = "Open enrollment is from " + startDate.toDateString() + " to " + endDate.toDateString();
+
+    return {
+        "title": title,
+        "display": display
+    }
 }
